@@ -6,13 +6,18 @@ import CityCard from './CityCard.jsx';
 
 export default function CitiesList() {
   const [cities, setCities] = useState([]);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    fetchCities().then(setCities);
+    setLoading(true);
+    fetchCities()
+      .then(setCities)
+      .then(() => setLoading(false));
   }, []);
 
   return (
     <div className='cities-list'>
+      {loading && <h3>Loading...</h3>}
       {cities.map(city => (
         <CityCard {...city}></CityCard>
       ))}
