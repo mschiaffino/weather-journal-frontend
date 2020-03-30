@@ -8,12 +8,20 @@
 .city-card-info {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 1.8rem;
   font-weight: 600;
+}
+
+.wind-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .wind-info-label {
   display: flex;
   justify-content: flex-end;
   font-size: 0.8rem;
+  padding-right: 3rem;
 }
