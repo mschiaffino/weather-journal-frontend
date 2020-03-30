@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { fetchCities } from '../api/weatherJournalAPI';
 
 import './CitiesList.css';
+import CityCard from './CityCard.jsx';
 
 export default function CitiesList() {
   const [cities, setCities] = useState([]);
@@ -10,9 +11,11 @@ export default function CitiesList() {
     fetchCities().then(setCities);
   }, []);
 
-  return cities.map(city => (
+  return (
     <div className='cities-list'>
-      <span>{city.name}</span>
+      {cities.map(city => (
+        <CityCard {...city}></CityCard>
+      ))}
     </div>
-  ));
+  );
 }
