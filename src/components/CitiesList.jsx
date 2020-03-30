@@ -19,7 +19,7 @@ export default function CitiesList() {
     <div className='cities-list'>
       {loading && <h3>Loading...</h3>}
       {cities.map(city => (
-        <CityCard {...city}></CityCard>
+        <CityCard {...city} key={city.name}></CityCard>
       ))}
     </div>
   );
