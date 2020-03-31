@@ -1,0 +1,13 @@
+.historic-observations {
+  margin-top: 20px;
+}
+
+.historic-observations-title {
+  font-weight: 600;
+}
+
+.historic-observations-list {
+  margin-top: 10px;
+  overflow-y: auto;
+  max-height: 150px;
+}

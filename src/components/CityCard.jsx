@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import './CityCard.css';
 import windIcon from '../assets/wind_icon.png';
 import ObservationForm from './ObservationForm.jsx';
+import HistoricObservations from './HistoricObservations.jsx';
+
 import { fetchObservations, postObservation } from '../api/weatherJournalAPI';
 
 export default function CityCard({ name, wind }) {
@@ -30,6 +32,7 @@ export default function CityCard({ name, wind }) {
         </div>
       </div>
       <ObservationForm onAddClicked={addObservation} />
+      <HistoricObservations observations={observartions} />
     </div>
   );
 }
