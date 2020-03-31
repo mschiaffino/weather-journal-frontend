@@ -21,3 +21,9 @@
 .observation-datetime {
   min-width: 9rem;
 }
+
+.observation-texts {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}

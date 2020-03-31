@@ -16,7 +16,7 @@ export default function HistoricObservations({ observations = [] }) {
             <div className='observation-datetime'>
               <span>{formatDatetime(datetime)}</span>
             </div>
-            <div>
+            <div className='observation-text'>
               <span>{text}</span>
             </div>
           </div>
