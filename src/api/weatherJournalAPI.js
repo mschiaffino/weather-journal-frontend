@@ -6,7 +6,14 @@ const APPLICATION_JSON_HEADERS = {
 };
 
 async function fetchCities() {
-  return fetch(CITIES_ENDPOINT_URL).then(response => response.json());
+  const response = await fetch(CITIES_ENDPOINT_URL);
+  return response.json();
+}
+
+async function fetchObservations(cityName) {
+  const query = `?city=${cityName}`;
+  const response = await fetch(`${OBSERVATIONS_ENDPOINT_URL}${query}`);
+  return response.json();
 }
 
 async function postObservation(cityName, observationText) {
@@ -15,11 +22,13 @@ async function postObservation(cityName, observationText) {
     text: observationText,
   };
 
-  return fetch(OBSERVATIONS_ENDPOINT_URL, {
+  const response = fetch(OBSERVATIONS_ENDPOINT_URL, {
     method: 'POST',
     body: JSON.stringify(newObservation),
     headers: APPLICATION_JSON_HEADERS,
-  }).then(response => response.json());
+  });
+
+  return response.json();
 }
 
-export { fetchCities, postObservation };
+export { fetchCities, fetchObservations, postObservation };
