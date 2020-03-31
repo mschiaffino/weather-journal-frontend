@@ -11,3 +11,13 @@
   overflow-y: auto;
   max-height: 150px;
 }
+
+.observation-row {
+  display: flex;
+  margin: 10px 0;
+  align-items: center;
+}
+
+.observation-datetime {
+  min-width: 9rem;
+}
