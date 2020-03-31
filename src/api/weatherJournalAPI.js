@@ -22,7 +22,7 @@ async function postObservation(cityName, observationText) {
     text: observationText,
   };
 
-  const response = fetch(OBSERVATIONS_ENDPOINT_URL, {
+  const response = await fetch(OBSERVATIONS_ENDPOINT_URL, {
     method: 'POST',
     body: JSON.stringify(newObservation),
     headers: APPLICATION_JSON_HEADERS,
