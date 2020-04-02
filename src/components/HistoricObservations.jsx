@@ -1,7 +1,9 @@
 import React from 'react';
 import dayjs from 'dayjs';
-
 import './HistoricObservations.css';
+
+const utc = require('dayjs/plugin/utc');
+dayjs.extend(utc);
 
 const formatDatetime = date => dayjs(date).format('HH:mm MM/DD/YYYY');
 
